@@ -4,6 +4,15 @@ import { HiOutlineCpuChip } from "react-icons/hi2";
 import Empower from './Empower';
 
 const Home = () => {
+  const empower = () => {
+    console.log("button clicked");
+    const section = document.getElementById("empower-section");
+
+  section.scrollIntoView({
+    behavior: "smooth"
+  });
+    
+  }
   return (
     <>
     <section className="hero-section">
@@ -43,7 +52,7 @@ const Home = () => {
 
         {/* 6. Explorer Button */}
         <div className="hero-action">
-          <button className="explore-btn">
+          <button className="explore-btn" onClick={empower}>
             <HiOutlineCpuChip className="btn-icon" />
             <span>Explore Courses</span>
           </button>

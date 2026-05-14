@@ -315,7 +315,7 @@ const Empower = () => {
 
   return (
     <>
-      <section className="empower">
+      <section className="empower" id="empower-section">
         <div className="empower__container">
 
           <div className="empower__heading">

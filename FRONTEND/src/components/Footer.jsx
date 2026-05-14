@@ -163,7 +163,7 @@ const Navbar = () => {
           © 2026 Jamia Academy. All rights reserved. Official Website of Jamia Academy
         </p>
         <span>
-          Made by Abu Fazal under the guidance of Mr Mohd Saad
+          Made by Abu Fazal 
         </span>
       </div>
     </footer>
