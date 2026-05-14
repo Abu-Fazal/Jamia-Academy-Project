@@ -1,0 +1,48 @@
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-4xl);
+}
+
+.vm-card {
+    background: #1a2234;
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 400px;
+    transition: var(--transition-normal);
+}
+
+.vm-card:hover {
+    border-color: rgba(45, 212, 191, 0.25);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transform: translateY(-4px);
+}
+
+.vm-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: var(--space-md);
+}
+
+.vm-card__title {
+    color: var(--color-white);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.vm-card__text {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--font-size-sm);
+    line-height: 1.75;
+}
+
+@media (min-width: 1024px) {
+    .vision-mission-grid { grid-template-columns: repeat(3, 1fr); }
+}

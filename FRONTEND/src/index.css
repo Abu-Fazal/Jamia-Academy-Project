@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+/* @import "tailwindcss"; */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   }
+
+   html,
+   body {
+   height: 100%;
+   width: 100%;
+   }
+
+   :root {
+   /* =========================
+      COLORS
+   ========================= */
+      --color-white: #ffffff;
+   --color-black: #000000;
+   --color-bg-navbar: #0f172b;
+   --color-bg-footer: #0b1120;
+   --color-bg-gallery: #0F172A;
+   --color-bg-course: #0e172b;
+   --color-bg-contect: #0f172a;
+   --color-bg-course-page: #e7f2fe;
+
+   /* =========================
+      FONT FAMILY
+   ========================= */
+   --font-family-poppins: "Poppins", sans-serif;
+   --font-family-urbanist: "Urbanist", sans-serif;
+
+   /* =========================
+      FONT SIZE
+      Mobile First Responsive
+   ========================= */
+
+   --font-size-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+
+   --font-size-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+
+   /* fixed spelling + scaling */
+   --font-size-base: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+
+   --font-size-md: clamp(1.125rem, 1rem + 0.5vw, 1.35rem);
+
+   --font-size-lg: clamp(1.35rem, 1.2rem + 1vw, 1.8rem);
+
+   --font-size-xl: clamp(1.8rem, 1.5rem + 2vw, 3rem);
+
+   --font-size-2xl: clamp(2.2rem, 2rem + 3vw, 4rem);
+
+   /* =========================
+      SPACING
+   ========================= */
+
+   --space-xs: clamp(0.25rem, 0.2rem + 0.3vw, 0.5rem);
+
+   --space-sm: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+
+   --space-md: clamp(0.75rem, 0.6rem + 0.5vw, 1rem);
+
+   --space-lg: clamp(1rem, 0.8rem + 0.7vw, 1.5rem);
+
+   --space-xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+
+   --space-2xl: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+
+   --space-3xl: clamp(3rem, 2rem + 2vw, 4rem);
+
+   --space-4xl: clamp(4rem, 3rem + 3vw, 6rem);
+
+   /* =========================
+      WIDTH
+   ========================= */
+
+   --width-full: 100%;
+
+   /* better responsive container */
+   --width-container: min(100% - 2rem, 80rem);
+
+   /* responsive card width */
+   --width-card: clamp(16rem, 45vw, 24rem);
+
+   /* =========================
+      HEIGHT
+   ========================= */
+
+   --height-full: 100%;
+
+   /* mobile browser fix */
+   --height-screen: 100dvh;
+
+   /* responsive section */
+   --height-section: clamp(25rem, 70vh, 60rem);
+
+   /* =========================
+      BORDER RADIUS
+   ========================= */
+
+   --radius-xs: 0.25rem;
+   --radius-sm: 0.5rem;
+   --radius-md: 0.75rem;
+   --radius-lg: 1rem;
+   --radius-xl: 1.5rem;
+   --radius-2xl: 2rem;
+   --radius-3xl: 2.5rem;
+
+   --radius-round: 9999px;
+
+   /* =========================
+      SHADOW
+   ========================= */
+
+   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+   --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+   /* =========================
+      TRANSITION
+   ========================= */
+
+   --transition-fast: 0.2s ease;
+
+   --transition-normal: 0.3s ease;
+
+   --transition-slow: 0.5s ease;
+   }

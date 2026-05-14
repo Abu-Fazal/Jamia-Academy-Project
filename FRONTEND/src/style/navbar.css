@@ -1,0 +1,444 @@
+@import "../index.css";
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #06102f, #081538, #091b45);
+  border-bottom: 1px solid #10354b;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(14px);
+}
+
+/* =========================
+   NAVBAR CONTAINER
+========================= */
+
+.navbar-container {
+  width: var(--width-container);
+  margin-inline: auto;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  position: relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 1002;
+}
+
+.navbar-logo img {
+  width: 130px;
+  object-fit: contain;
+}
+
+.navbar-logo p {
+  margin-top: 0.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  font-family: var(--font-family-poppins);
+  white-space: nowrap;
+}
+
+/* =========================
+   NAV LINKS — DESKTOP
+========================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.navbar-links a {
+  position: relative;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family-poppins);
+  transition: var(--transition-normal);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.navbar-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.16),
+    rgba(0, 217, 255, 0.06)
+  );
+  opacity: 0;
+  transition: var(--transition-normal);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.18);
+  z-index: -1;
+}
+
+.navbar-links a:hover::before,
+.navbar-links a.active::before {
+  opacity: 1;
+}
+
+.navbar-links a.active {
+  color: #00d9ff;
+}
+
+/* =========================
+   ACTIVE LINE
+========================= */
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background: #00d9ff;
+  border-radius: var(--radius-round);
+  transition: var(--transition-normal);
+}
+
+.navbar-links a.active::after {
+  width: 70%;
+}
+
+/* =========================
+   SEARCH WRAPPER — DESKTOP
+========================= */
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-round);
+  padding: 2px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1002;
+}
+
+.search-wrapper.active {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
+  animation: glowPulse 2s infinite;
+}
+
+.search-input {
+  width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-poppins);
+  transition: var(--transition-normal);
+  padding: 0;
+  opacity: 0;
+}
+
+.search-wrapper.active .search-input {
+  width: 100%;
+  padding: 0 var(--space-md);
+  opacity: 1;
+}
+
+.search-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #00d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition-normal);
+}
+
+.search-btn:hover {
+  background: rgba(0, 217, 255, 0.08);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.2);
+}
+
+.search-wrapper.active .search-btn {
+  transform: rotate(90deg);
+}
+
+/* =========================
+   HAMBURGER — DEFAULT HIDDEN
+========================= */
+
+.hamburger {
+  display: none; /* ✅ Desktop pe hidden */
+  width: 48px;
+  height: 48px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  /* background: var(--color-white); */
+  background: transparent;
+  border-radius: var(--radius-md);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  transition: var(--transition-normal);
+  z-index: 1002;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: var(--radius-round);
+  transition: var(--transition-normal);
+  display: block;
+}
+
+/* ACTIVE HAMBURGER — X Shape */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   MOBILE SEARCH — Inside Menu
+   Sirf mobile menu ke andar
+========================= */
+
+.mobile-search-wrapper {
+  display: none; /* Desktop pe hide */
+  width: 100%;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-round);
+  padding: var(--space-xs) var(--space-md);
+  gap: var(--space-sm);
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  margin-top: var(--space-sm);
+}
+
+.mobile-search-wrapper input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-poppins);
+}
+
+.mobile-search-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mobile-search-icon {
+  color: #00d9ff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   GLOW ANIMATION
+========================= */
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(0, 217, 255, 0.15); }
+  50% { box-shadow: 0 0 28px rgba(0, 217, 255, 0.45); }
+  100% { box-shadow: 0 0 10px rgba(0, 217, 255, 0.15); }
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+}
+
+/* =========================
+   TABLET — 992px
+========================= */
+
+@media (max-width: 992px) {
+  .navbar-container {
+    min-height: 90px;
+  }
+
+  .navbar-links {
+    gap: 0.6rem;
+  }
+
+  .navbar-links a {
+    padding: 0.9rem 1rem;
+  }
+
+  .search-wrapper.active {
+    width: 240px;
+  }
+}
+
+/* =========================
+   MOBILE — 768px
+   Hamburger show karo
+   Search bahar hide karo
+========================= */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    min-height: 80px;
+    padding: var(--space-md) 0;
+    gap: var(--space-sm);
+  }
+
+  /* ✅ Hamburger dikhao */
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* ✅ Desktop search bahar hide karo */
+  .search-wrapper {
+    display: none;
+  }
+
+  /* ✅ Mobile search andar dikhao */
+  .mobile-search-wrapper {
+    display: flex;
+  }
+
+  /* ✅ Mobile nav links — dropdown style */
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(160deg, #06102f, #081538, #091b45);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+
+    /* ✅ Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-20px);
+
+    /* ✅ Smooth transition */
+    transition: 
+      opacity var(--transition-normal),
+      transform var(--transition-normal),
+      visibility var(--transition-normal);
+
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ✅ Active hone pe smooth slide down */
+  .navbar-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar-links a {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-md);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* =========================
+   SMALL MOBILE — 480px
+========================= */
+
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 75px;
+  }
+
+  .navbar-logo img {
+    width: 105px;
+  }
+
+  .navbar-logo p {
+    font-size: var(--font-size-xs);
+  }
+
+  .hamburger {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hamburger span {
+    width: 24px;
+  }
+
+  .navbar-links {
+    padding: var(--space-md);
+  }
+
+  .navbar-links a {
+    font-size: var(--font-size-sm);
+    padding: var(--space-sm);
+  }
+
+  .mobile-search-wrapper {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}

@@ -1,0 +1,40 @@
+.founder-message {
+    margin: var(--space-4xl) 0;
+}
+
+.founder-message__title {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.founder-message__panel {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.founder-message__content p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+    font-size: var(--font-size-base);
+}
+
+.founder-message__signature {
+    margin-top: var(--space-2xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-lg);
+}
+
+.founder-message__signature h4 {
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.founder-message__signature p {
+    color: #2dd4bf;
+    font-size: var(--font-size-sm);
+}

@@ -1,0 +1,348 @@
+/* =========================
+   IMPORT ROOT VARIABLES
+========================= */
+
+@import "../index.css";
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+  background: #020b25;
+  color: var(--color-white);
+  padding-top: var(--space-4xl);
+  position: relative;
+  overflow: hidden;
+  /* border: 2px solid red; */
+  border-top: 1px solid #35383a;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.footer-container {
+  width: var(--width-container);
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.1fr 1.1fr;
+
+  gap: 4rem;
+
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.footer-logo {
+  width: 150px;
+  object-fit: contain;
+}
+
+.footer-description {
+  margin-top: 1.8rem;
+
+  max-width: 320px;
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 1.1rem;
+  line-height: 1.9;
+
+  font-family: var(--font-family-poppins);
+  font-weight: 400;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+
+  margin-top: 2rem;
+}
+
+.footer-social a {
+  color: rgba(255,255,255,0.65);
+
+  font-size: 1.7rem;
+
+  transition: var(--transition-normal);
+}
+
+.footer-social a:hover {
+  color: #00d9ff;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  margin-bottom: 2rem;
+
+  font-family: var(--font-family-poppins);
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-links ul li {
+  list-style: none;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 1.15rem;
+
+  transition: var(--transition-normal);
+
+  font-family: var(--font-family-poppins);
+}
+
+.footer-links ul li a:hover {
+  color: #00d9ff;
+  padding-left: 0.3rem;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  color: #00d9ff;
+
+  font-size: 1.5rem;
+
+  margin-top: 0.2rem;
+}
+
+.contact-item p {
+  color: rgba(255,255,255,0.75);
+
+  line-height: 1.7;
+
+  font-size: 1.08rem;
+
+  font-family: var(--font-family-poppins);
+}
+
+/* =========================
+   POWERED SECTION
+========================= */
+
+.powered-wrapper {
+  width: var(--width-container);
+
+  margin-inline: auto;
+
+  padding: 3rem 0;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.powered-title h2 {
+  font-size: 3rem;
+
+  font-weight: 700;
+
+  margin-bottom: 0.6rem;
+
+  font-family: var(--font-family-poppins);
+}
+
+.powered-title span {
+  width: 60px;
+  height: 5px;
+
+  background: #00d9ff;
+
+  display: block;
+
+  border-radius: var(--radius-round);
+
+  margin-bottom: 3rem;
+}
+
+/* =========================
+   POWER GRID
+========================= */
+
+.powered-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 2rem;
+
+  align-items: center;
+}
+
+.powered-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.powered-card img {
+  width: 100px;
+  height: 100px;
+
+  object-fit: contain;
+
+  background: white;
+
+  padding: 0.5rem;
+
+  border-radius: 12px;
+}
+
+.powered-card p {
+  font-size: 1.4rem;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family-poppins);
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.footer-bottom {
+  text-align: center;
+
+  padding: 1.5rem 1rem 2rem;
+}
+
+.footer-bottom p {
+  color: rgba(255,255,255,0.6);
+
+  font-size: 1.15rem;
+
+  margin-bottom: 0.4rem;
+
+  font-family: var(--font-family-poppins);
+}
+
+.footer-bottom span {
+  color: rgba(255,255,255,0.45);
+
+  font-size: 0.95rem;
+
+  font-family: var(--font-family-poppins);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .powered-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding-top: 3rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-links h3,
+  .footer-contact h3 {
+    font-size: 1.6rem;
+  }
+
+  .footer-description {
+    max-width: 100%;
+
+    font-size: 1rem;
+  }
+
+  .powered-title h2 {
+    font-size: 2rem;
+  }
+
+  .powered-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .powered-card img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .powered-card p {
+    font-size: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .footer-bottom span {
+    font-size: 0.8rem;
+  }
+
+  .whatsapp-btn {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 0.8rem 1.3rem;
+
+    font-size: 1rem;
+  }
+}

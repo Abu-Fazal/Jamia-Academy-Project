@@ -1,0 +1,198 @@
+/* --- Global Container --- */
+.course-section {
+  background-color: #0e172b; /* Exact dark theme background */
+  padding: var(--space-4xl) 0;
+  min-height: 100vh;
+  font-family: var(--font-family-poppins);
+}
+
+.container {
+  width: var(--width-container);
+  margin: 0 auto;
+}
+
+/* --- Section Header --- */
+.section-header {
+  margin-bottom: var(--space-3xl);
+}
+
+.section-title {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: var(--font-size-xl);
+  /* font-family: var(--font-family-urbanist); */
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.section-title span {
+  color: #8b5cf6; /* Purple color for 'Courses' */
+}
+
+.section-subtitle {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* --- Grid Layout --- */
+.course-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr; /* Mobile */
+}
+
+@media (min-width: 768px) {
+  .course-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .course-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --- Course Card Design --- */
+.course-card {
+  background: #1e293b; /* Card Background color */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px; /* Rounded corners as per image */
+  overflow: hidden; /* Important for button positioning */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.card-padding {
+  padding: 30px 25px;
+  flex-grow: 1;
+}
+
+/* --- Hover & Active State (Image 2) --- */
+.course-card:hover, .active-card {
+  transform: translateY(-5px);
+  border-color: #00bcd4; /* Cyan border on click/hover */
+  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.15);
+}
+
+.category-tag {
+  color: #00bcd4; /* Cyan text */
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.course-name {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.course-desc {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Footer & Badge --- */
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.level-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* --- View Details Button (Bottom of Card) --- */
+.view-details-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 18px;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+/* Image 2 Active State Button */
+.course-card:hover .active-card  {
+  background-color: #00bcd4;
+  color: #0f172b;
+  border-top: none;
+}
+
+.view-details-btn:hover {
+  background-color: #00bcd4;
+  color: #0f172b;
+}
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  background: #1e293b;
+  width: 90%;
+  max-width: 550px;
+  padding: 40px;
+  border-radius: 24px;
+  position: relative;
+  color: white;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none; border: none;
+  color: #94a3b8; cursor: pointer;
+}
+
+.modal-title { font-size: 24px; margin-bottom: 8px; }
+.modal-category { color: #00bcd4; margin-bottom: 25px; }
+.modal-meta { display: flex; gap: 40px; margin-bottom: 30px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
+.modal-body h3 { font-size: 16px; margin: 20px 0 10px; color: #f1f5f9; }
+.learn-list { list-style: circle; padding-left: 20px; color: #94a3b8; line-height: 1.8; }
