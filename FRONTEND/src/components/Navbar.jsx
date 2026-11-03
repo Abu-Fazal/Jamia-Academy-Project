@@ -41,7 +41,7 @@ const Navbar = () => {
           ========================= */}
           <div className="navbar-logo">
             <img src={logo} alt="Jamia Academy" />
-            <p>Learn • Create • Achieve</p>
+            <p className="jamia-logo-text">Learn • Create • Achieve</p>
           </div>
 
           {/* =========================
